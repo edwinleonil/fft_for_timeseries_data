@@ -13,17 +13,17 @@ y = np.sin(f1 * 2.0*np.pi*x) + 0.5*np.sin(f2 * 2.0*np.pi*x)
 yf = fft(y)
 xf = fftfreq(N, T)[:N//2]
 
+# print shape of yf and xf
+print(yf.shape)
+print(xf.shape)
+
 # add a low pass filter 
-yf[xf > 70] = 0
+yf[xf > 70][:len(yf[xf > 70])] = 0
 
 # plot
-plt.plot(xf, 2.0/N * np.abs(yf[0:N]))
+plt.plot(xf, 2.0/N * np.abs(yf[0:N//2]))
 plt.grid()
 plt.show()
 
-
-
-
-
-
-
+# todo: add a bandpass filter to the data
+# Define a bandpass filter function using a butterworth filter
