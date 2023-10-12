@@ -25,5 +25,5 @@ plt.plot(xf, 2.0/N * np.abs(yf[0:N//2]))
 plt.grid()
 plt.show()
 
-# todo: add a bandpass filter to the data
+#TODO: add a bandpass filter to the data
 # Define a bandpass filter function using a butterworth filter
